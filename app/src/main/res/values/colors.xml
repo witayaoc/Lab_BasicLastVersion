@@ -5,5 +5,10 @@
     <color name="colorAccent">#000000</color>
     <color name="bg1">#3e83f2</color>
     <color name="bg2">#ffff33</color>
+    <color name="blueviolet">#443266</color>
+    <color name="periwinklegray">#c3c3e5</color>
+    <color name="titanwhite">#f1f0ff</color>
+    <color name="affairpurpleviolet">#8c489f</color>
+    
     <color name="font">#ffffff</color>
 </resources>
