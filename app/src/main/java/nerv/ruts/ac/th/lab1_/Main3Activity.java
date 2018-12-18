@@ -22,7 +22,7 @@ TextView textView5,textView6,textView7;
         btncal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent btncal= new Intent(Main3Activity.this,Main4Activity.class);
+                Intent btncal= new Intent(Main3Activity.this,Main6Menucal.class);
                 startActivity(btncal);
             }
         });

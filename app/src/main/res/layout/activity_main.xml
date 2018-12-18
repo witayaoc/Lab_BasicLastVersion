@@ -22,8 +22,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="282dp"
-        android:layout_height="76dp"
+        android:layout_width="266dp"
+        android:layout_height="51dp"
         android:layout_marginStart="138dp"
         android:layout_marginLeft="138dp"
         android:layout_marginTop="8dp"
@@ -32,15 +32,15 @@
         android:layout_marginBottom="8dp"
         android:text="@string/name"
         android:textColor="@color/titanwhite"
-        android:textSize="70sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:fontFamily="@font/aaa"
+        app:fontFamily="@font/ekkamai"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.634" />
 
     <Button
         android:id="@+id/button1"
