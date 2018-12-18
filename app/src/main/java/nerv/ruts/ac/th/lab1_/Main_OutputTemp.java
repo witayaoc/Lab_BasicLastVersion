@@ -39,7 +39,7 @@ public class Main_OutputTemp extends AppCompatActivity {
 
         inputnum1.setText(x);
         inputdata2.setText(y);
-        resultTemp3.setText(y);
+        resultTemp3.setText(z);
 
 
 

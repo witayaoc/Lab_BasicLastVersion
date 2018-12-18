@@ -44,35 +44,29 @@ public class Main6Temp extends AppCompatActivity {
                     if (strTemp.equals("")) {
                         Log.d("Space", "It Have space in Blank");
                     } else if (strTemRadio == "Celsius") {
-
+                        radiocel();
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
-
                         intent.putExtra("temp",strTemp);
                         intent.putExtra("Unit",strTemRadio);
                         intent.putExtra("Answer",Answer);
-
-
                         startActivity(intent);
 
                         Log.d("Pass", "It Have space in Celsius");
                     } else if (strTemRadio == "Fahrenheit") {
-
+                        radioFah();
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
                         intent.putExtra("temp",strTemp);
                         intent.putExtra("Unit",strTemRadio);
                         intent.putExtra("Answer",Answer);
-
                         startActivity(intent);
 
                         Log.d("Pass", "It Have space in Fahrenheit");
                     } else if (strTemRadio == "Kalvin") {
-
+                        radioKa();
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
                         intent.putExtra("temp",strTemp);
                         intent.putExtra("Unit",strTemRadio);
                         intent.putExtra("Answer",Answer);
-
-
                         startActivity(intent);
 
                         Log.d("Pass", "It Have space in Kalvin");
@@ -109,18 +103,18 @@ public class Main6Temp extends AppCompatActivity {
 
     //การคำนวน
     private void radiocel() {
-        douAnswer = Double.parseDouble(strTemRadio);
+        douAnswer = Double.parseDouble(strTemp);
         Answer = Double.toString(douAnswer);
 
     }
 
     private void radioFah() {
-        douAnswer = Double.parseDouble(strTemRadio)*1.8+32;
+        douAnswer = Double.parseDouble(strTemp)*1.8+32;
         Answer = Double.toString(douAnswer);
     }
 
     private void radioKa() {
-        douAnswer = Double.parseDouble(strTemRadio)+273.15;
+        douAnswer = Double.parseDouble(strTemp)+273.15;
         Answer = Double.toString(douAnswer);
     }
 }
