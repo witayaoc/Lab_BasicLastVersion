@@ -10,7 +10,8 @@ import android.widget.TextView;
 public class Main_OutputTemp extends AppCompatActivity {
 
     private Button pcagian,btnMenu,btimg;
-    private TextView inputnum;
+    private TextView inputnum1,inputdata2,resultTemp3;
+    private String x,y,z;
 
 
     @Override
@@ -21,7 +22,26 @@ public class Main_OutputTemp extends AppCompatActivity {
         pcagian=(Button)findViewById(R.id.pcagain);
         btnMenu=(Button)findViewById(R.id.btnMenu);
         btimg=(Button)findViewById(R.id.btimg2);
-        inputnum=(TextView)findViewById(R.id.inputnum);
+
+        Intent intent=getIntent();
+
+        x = intent.getExtras().getString("temp");
+        y = intent.getExtras().getString("Unit");
+        z = intent.getExtras().getString("Answer");
+
+        inputnum1=(TextView)findViewById(R.id.inputnum);
+        inputdata2=(TextView)findViewById(R.id.inputdata);
+        resultTemp3=(TextView)findViewById(R.id.resultTemp);
+
+
+
+
+
+        inputnum1.setText(x);
+        inputdata2.setText(y);
+        resultTemp3.setText(y);
+
+
 
         pcagian.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +65,8 @@ public class Main_OutputTemp extends AppCompatActivity {
             }
         });
 
-        inputnum.setText(getIntent().getStringExtra("numtemp"));
+        //inputnum.setText(getIntent().getStringExtra("numtemp"));
+
+
     }
 }

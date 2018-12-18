@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.security.acl.Group;
@@ -18,8 +19,9 @@ public class Main6Temp extends AppCompatActivity {
 
     private EditText editTemp;
     private RadioGroup radiogroup;
-    private String strTemp, strTemRadio = "Celsius", Answer;
+    private String strTemp,strTemRadio = "Celsius",Answer;
     private double douAnswer;
+
 
 
     @Override
@@ -29,7 +31,7 @@ public class Main6Temp extends AppCompatActivity {
 
 
         editTemp = (EditText) findViewById(R.id.editTemp);
-        radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
+        radiogroup = (RadioGroup) findViewById(R.id.radioTemp);
 
 
         btnTemp = (Button) findViewById(R.id.btntemp);
@@ -45,29 +47,35 @@ public class Main6Temp extends AppCompatActivity {
 
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
 
-                        intent.putExtra("numtemp", editTemp.getText().toString());
+                        intent.putExtra("temp",strTemp);
+                        intent.putExtra("Unit",strTemRadio);
+                        intent.putExtra("Answer",Answer);
+
 
                         startActivity(intent);
 
-                        Log.d("Pass", "It Have space in Data");
+                        Log.d("Pass", "It Have space in Celsius");
                     } else if (strTemRadio == "Fahrenheit") {
 
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
-
-                        intent.putExtra("numtemp", editTemp.getText().toString());
+                        intent.putExtra("temp",strTemp);
+                        intent.putExtra("Unit",strTemRadio);
+                        intent.putExtra("Answer",Answer);
 
                         startActivity(intent);
 
-                        Log.d("Pass", "It Have space in Data");
+                        Log.d("Pass", "It Have space in Fahrenheit");
                     } else if (strTemRadio == "Kalvin") {
 
                         Intent intent = new Intent(Main6Temp.this, Main_OutputTemp.class);
+                        intent.putExtra("temp",strTemp);
+                        intent.putExtra("Unit",strTemRadio);
+                        intent.putExtra("Answer",Answer);
 
-                        intent.putExtra("numtemp", editTemp.getText().toString());
 
                         startActivity(intent);
 
-                        Log.d("Pass", "It Have space in Data");
+                        Log.d("Pass", "It Have space in Kalvin");
                     }
 
                 } catch (Exception e) {
@@ -76,16 +84,22 @@ public class Main6Temp extends AppCompatActivity {
 
             }
         });
+
+        //set Radio Button
+
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.radiocel:
                         strTemRadio = "Celsius";
+                        break;
                     case R.id.radioFah:
                         strTemRadio = "Fahrenheit";
+                        break;
                     case R.id.radioKa:
                         strTemRadio = "Kalvin";
+                        break;
 
                 }
             }
@@ -93,18 +107,19 @@ public class Main6Temp extends AppCompatActivity {
 
     }
 
-    private void calculateCelsius() {
+    //การคำนวน
+    private void radiocel() {
         douAnswer = Double.parseDouble(strTemRadio);
         Answer = Double.toString(douAnswer);
 
     }
 
-    private void calculateFahrenheit() {
+    private void radioFah() {
         douAnswer = Double.parseDouble(strTemRadio)*1.8+32;
         Answer = Double.toString(douAnswer);
     }
 
-    private void calculatKalvin() {
+    private void radioKa() {
         douAnswer = Double.parseDouble(strTemRadio)+273.15;
         Answer = Double.toString(douAnswer);
     }
