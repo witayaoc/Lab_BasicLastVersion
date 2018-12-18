@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class Main6Menucal extends AppCompatActivity {
 
-    Button btncal;
+    Button btncal,btntemp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,21 @@ public class Main6Menucal extends AppCompatActivity {
         setContentView(R.layout.activity_main6_menucal);
 
         btncal=(Button)findViewById(R.id.btncal);
+        btntemp=(Button)findViewById(R.id.btntemp);
+
+
         btncal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Main6Menucal.this,Main4Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        btntemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Main6Menucal.this,Main6Temp.class);
                 startActivity(intent);
             }
         });

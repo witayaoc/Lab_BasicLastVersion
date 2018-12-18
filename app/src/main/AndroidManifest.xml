@@ -20,7 +20,9 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main4Activity" />
         <activity android:name=".Main5Activity" />
-        <activity android:name=".Main6Menucal"></activity>
+        <activity android:name=".Main6Menucal" />
+        <activity android:name=".Main6Temp" />
+        <activity android:name=".Main_OutputTemp"></activity>
     </application>
 
 </manifest>
